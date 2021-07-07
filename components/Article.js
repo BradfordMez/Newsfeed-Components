@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Fuck Yea',
+    date: 'Mar 28th, 2001',
+    firstParagraph: 'Money Lean Promethlazine',
+    secondParagraph: 'Dogwater, absolute garbage, literal trash that I throw away',
+    thirdParagraph: 'YES YES YES YES YES YES YES YES YES YES YES YES YES YES YES Yes'
   }
 ];
 
@@ -114,3 +121,51 @@ const data = [
   Step 5: Try adding new article object to the data array. Make sure it is in the same format as the others.
   Refresh the page to see the new article.
 */
+const articles = document.querySelector('.articles')
+
+function articleMaker({title, date, firstParagraph, secondParagraph, thirdParagraph}) {
+  const article = document.createElement('div')
+  const artTitle = document.createElement('h2')
+  const artPDate = document.createElement('p')
+  const artFirstP = document.createElement('p')
+  const artSecondP = document.createElement('p')
+  const artThirdP = document.createElement('p')
+  const artButton = document.createElement('span')
+
+  article.appendChild(artTitle)
+  article.appendChild(artPDate)
+  article.appendChild(artFirstP)
+  article.appendChild(artSecondP)
+  article.appendChild(artThirdP)
+  article.appendChild(artButton)
+
+  article.classList.add('article')
+  artPDate.classList.add('date')
+  artButton.classList.add('expandButton')
+
+  artTitle.textContent = title
+  artPDate.textContent = date
+  artFirstP.textContent = firstParagraph
+  artSecondP.textContent = secondParagraph
+  artThirdP.textContent = thirdParagraph
+  artButton.textContent = '+'
+
+  artButton.addEventListener('click', ()=>{
+    article.classList.toggle('article-open')
+  })
+  
+  
+  return article
+}
+
+const testArticle = articleMaker({title: 'Test Title' , date: '5/12/1909', p1: 'SHDGFKJsd', p2: 'dfjgnhdo' , p3: 'sfrhsf'})
+
+console.log(testArticle)
+
+
+
+data.forEach(obj =>{
+  const article = articleMaker(obj)
+  articles.appendChild(article)
+})
+
