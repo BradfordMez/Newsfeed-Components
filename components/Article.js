@@ -86,6 +86,13 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Fuck Yea',
+    date: 'Mar 28th, 2001',
+    firstParagraph: 'Money Lean Promethlazine',
+    secondParagraph: 'Dogwater, absolute garbage, literal trash that I throw away',
+    thirdParagraph: 'YES YES YES YES YES YES YES YES YES YES YES YES YES YES YES Yes'
   }
 ];
 
@@ -162,5 +169,3 @@ data.forEach(obj =>{
   articles.appendChild(article)
 })
 
-// Step 4: Outside your function now, loop over the data. At each iteration you'll use your component
-// to create a div.article element and append it to the DOM inside div.articles (see index.html).
