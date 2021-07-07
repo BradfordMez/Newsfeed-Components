@@ -44,11 +44,11 @@ function menuMaker(menuItems) {
   const list = document.createElement('ul')
   const items = document.createElement('li')
   const menuButton = document.querySelector('.menu-button')
-
+  
+  menu.classList.add('menu')
+  
   menu.appendChild(list)
   list.appendChild(items)
-
-  menu.classList.add('menu')
 
   menuItems.forEach((item)=>{
     const li = document.createElement('li');
@@ -56,9 +56,6 @@ function menuMaker(menuItems) {
     li.textContent = item;
   })
 
-  menu.appendChild(list)
-
-  
   menuButton.addEventListener('click', ()=>{
     menu.classList.toggle('menu--open')
   })
