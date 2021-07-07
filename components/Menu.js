@@ -38,7 +38,7 @@ let menuItems = [
 */
 
 
-function menuMaker(menuArr) {
+function menuMaker(menuItems) {
 
   const menu = document.createElement('div')
   const list = document.createElement('ul')
@@ -50,10 +50,10 @@ function menuMaker(menuArr) {
 
   menu.classList.add('menu')
 
-  menuItems.forEach(function(){
-    const item = document.createElement('li');
-    item.appendChild(document.createTextNode);
-    list.appendChild(item)
+  menuItems.forEach((item)=>{
+    const li = document.createElement('li');
+    list.appendChild(li);
+    li.textContent = item;
   })
 
   menu.appendChild(list)
@@ -63,8 +63,9 @@ function menuMaker(menuArr) {
     menu.classList.toggle('menu--open')
   })
 
-
   return menu
 }
 
-
+const header= document.querySelector('.header')
+const menu = menuMaker(menuItems)
+header.appendChild(menu)
